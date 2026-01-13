@@ -7,17 +7,20 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const ProductDetail = () => {
 
+      const API_URL = import.meta.env.VITE_API_BASE_URL
+
     const dispatch = useDispatch()
     const { id } = useParams();
     const [product, setproduct] = useState(null);
     const [loading, setloading] = useState(null);
 
+
     const cartItems = useSelector(state => state.cart.value)
-    const cartItem = cartItems.find(item => item.id === product.id);
+    const cartItem = cartItems.find(item => item.id === product?.id);
 
     useEffect(() => {
         async function fetchproduct() {
-            const res = await axios.get(`https://fakestoreapi.com/products/${id}`);
+            const res = await axios.get(`${API_URL}${id}`);
             console.log(res);
 
             setproduct(res.data);
@@ -30,13 +33,17 @@ const ProductDetail = () => {
         dispatch(ADD_TO_CART(product))
     }
 
-    // const increaseHandler = () => {
-    //     dispatch(increaseQuantity(product.id));
-    // };
+    if (loading || !product) {
+        return <h1>Loading...</h1>;
+    }
 
-    // const decreaseHandler = () => {
-    //     dispatch(decreaseQuantity(product.id));
-    // };
+    const increaseHandler = () => {
+        dispatch(increaseQuantity(product.id));
+    };
+
+    const decreaseHandler = () => {
+        dispatch(decreaseQuantity(product.id));
+    };
 
     if (!product) {
         return <h1 className="text-center p-10">Loading...</h1>;
