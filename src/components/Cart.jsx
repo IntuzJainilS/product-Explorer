@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { REMOVE_FROM_CART, FETCH_PRODUCTS, increaseQuantity, decreaseQuantity } from '../Redux/Cartslice';
+import { REMOVE_FROM_CART, increaseQuantity, decreaseQuantity } from '../Redux/Cartslice';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const Cart = () => {
             />
             <div>
               <p className="font-semibold">{product.title.slice(0, 15)}</p>
-              <p>₹{product.price}</p>
+              <p>${product.price}</p>
             </div>
           </div>
           <p>Total quantity: {product.quantity}</p>
