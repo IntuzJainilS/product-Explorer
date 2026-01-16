@@ -27,7 +27,7 @@ const Productcard = ({ product }) => {
 
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md">
-      <div className=" h-50 w-50 aspect-square overflow-hidden bg-gray-100 group-hover:opacity-90 transition-opacity">
+      <div className=" h-60 w-60 aspect-square overflow-hidden bg-gray-100 group-hover:opacity-90 transition-opacity ml-18">
         <img
           src={product.image}
           alt={product.title}

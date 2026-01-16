@@ -12,7 +12,7 @@ const ProductDetail = () => {
     const dispatch = useDispatch()
     const { id } = useParams();
     const [product, setproduct] = useState(null);
-    const [loading, setloading] = useState(null);
+    const [loading, setloading] = useState(true);
 
 
     const cartItems = useSelector(state => state.cart.value)
@@ -21,7 +21,7 @@ const ProductDetail = () => {
     useEffect(() => {
         async function fetchproduct() {
             const res = await axios.get(`${API_URL}${id}`);
-            console.log(res);
+            // console.log(res);
 
             setproduct(res.data);
             setloading(false);

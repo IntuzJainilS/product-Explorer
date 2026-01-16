@@ -6,16 +6,15 @@ import Productcard from './Productcard';
 const ProductList = () => {
 
   const API_URL = import.meta.env.VITE_API_BASE_URL
-  console.log(API_URL);
+  // console.log(API_URL);
 
-  const api = axios.create({
-    baseURL: API_URL,
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  // const api = axios.create({
+  //   baseURL: API_URL,
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  // });
   
-
   const [product, setproduct] = useState([])
   const [loading, setLoading] = useState(true)
   const [err, seterr] = useState(null)
@@ -25,7 +24,7 @@ const ProductList = () => {
       try {
         const response = await axios.get(API_URL)
         setproduct(response.data);
-        console.log(response);
+        // console.log(response);
         setLoading(false)
       } catch (error) {
         console.error("Fetch error:", error);

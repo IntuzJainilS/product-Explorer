@@ -5,7 +5,7 @@ import { REMOVE_FROM_CART, FETCH_PRODUCTS, increaseQuantity, decreaseQuantity } 
 const Cart = () => {
   const dispatch = useDispatch();
   const products = useSelector(state => state.cart.value);
-  console.log(products)
+  // console.log(products)
   const removeFromCart = (id) => dispatch(REMOVE_FROM_CART(id));
 
   const totalQuantity = products.reduce((sum, item) => sum + item.quantity, 0);
