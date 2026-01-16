@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 const Productcard = ({ product }) => {
   const dispatch = useDispatch()
 
-  const cartItems = useSelector(state => state.cart.value)
+  const cartItems = useSelector(state => state.cart.cartItems)
 
   const cartItem = cartItems.find(item => item.id === product.id);
   // console.log("cart includes these products",cartItem)

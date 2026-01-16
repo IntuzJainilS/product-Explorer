@@ -4,7 +4,7 @@ import { REMOVE_FROM_CART, increaseQuantity, decreaseQuantity } from '../Redux/C
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const products = useSelector(state => state.cart.value);
+  const products = useSelector(state => state.cart.cartItems);
   // console.log(products)
   const removeFromCart = (id) => dispatch(REMOVE_FROM_CART(id));
 

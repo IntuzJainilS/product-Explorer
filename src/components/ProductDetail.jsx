@@ -15,7 +15,7 @@ const ProductDetail = () => {
     const [loading, setloading] = useState(true);
 
 
-    const cartItems = useSelector(state => state.cart.value)
+    const cartItems = useSelector(state => state.cart.cartItems)
     const cartItem = cartItems.find(item => item.id === product?.id);
 
     useEffect(() => {
