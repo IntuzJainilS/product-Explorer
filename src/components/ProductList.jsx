@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Productcard from './Productcard';
+import api_url from '../utils/EnvVariables'
 
 const ProductList = () => {
 
-  const API_URL = import.meta.env.VITE_API_BASE_URL
+  const API_URL = api_url;
   // console.log(API_URL);
 
   // const api = axios.create({
